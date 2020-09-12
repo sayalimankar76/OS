@@ -1,0 +1,294 @@
+ASSIGNMENT 1:
+
+Q1. Explore the following commands with various options, refer man pages for 
+    further help a) date b) cal c) bc d) echo e) who f) whoami g) logname g) uname h)
+    seq i) clear
+
+a) date 
+
+%D: Display date as mm/dd/yy.    2020   
+%d: Display the day of the month (01 to 31). 07       
+%a: Displays the abbreviated name for weekdays (Sun to Sat).Mon
+%A: Displays full weekdays (Sunday to Saturday). Monday
+%h: Displays abbreviated month name (Jan to Dec). Sep
+%b: Displays abbreviated month name (Jan to Dec). Sep
+%B: Displays full month name(January to December).September
+%m: Displays the month of year (01 to 12). 09
+%y: Displays last two digits of the year(00 to 99). 20
+%Y: Display four-digit year. 2020
+%T: Display the time in 24 hour format as HH:MM:SS.21:50:41
+%H: Display the hour. 21
+%M: Display the minute.50
+%S: Display the seconds.41
+
+date --date="next mon"	Mon Sep 14 00:00:00 IST 2020
+date --date="next year" Tue Sep  7 21:45:07 IST 2021
+date --date="2 year"  Wed Sep  7 21:45:20 IST 2022
+date -u Mon Sep  7 16:26:15 UTC 2020
+date --date="2020/09/07" Mon Sep  7 00:00:00 IST 2020
+
+b) cal 
+cal 2020
+cal -m12 2020
+cal sept 2020
+ncal
+
+c) bc 
+bc (Basic Calculator) is a command line utility that offers everything you expect from a simple scientific or financial calculator
+
+d) echo 
+echo command in linux is used to display line of text/string that are passed as an argument . 
+
+e) who
+The standard Unix command who displays a list of users who are currently logged into the computer.
+
+f) whoami 
+whoami - This command reveals who is currently logged in.
+
+g) logname
+In computer software, logname (stands for Login Name) is a program in Unix and Unix-like operating systems that prints the name of the user who is currently logged in on the terminal.
+
+g) uname 
+ uname -a -a option: It prints all the system information in the following order:
+ Kernel name, network node hostname, kernel release date, kernel version, machine hardware name, hardware platform, operating system
+uname -s : It prints the kernel name
+uname -n : It prints the hostname of the network node(current computer).
+uname -r:  It prints the kernel release date.
+uname -v option: It prints the version of the current kernel.
+uname  -m option: It prints the machine hardware name.
+uname -p option: It prints the type of the processor.
+uname -o option: It prints the name of the operating system.
+
+h)seq 
+seq command in Linux is used to generate numbers from FIRST to LAST in steps of INCREMENT. 
+for eg: 
+seq 10
+seq 3 9
+seq 5 5 50
+
+
+i) clear
+clear is a standard Unix computer operating system command that is used to clear the terminal screen
+
+===================================================================
+
+
+Q2.	A) Create three directory a b and c and create a.txt,b.txt and c.txt
+	in each directory respectively and then copy c directory into the a.
+
+>>mkdir a b c
+>>cat > a/a.txt  b/b.txt  c/c.txt
+>>cp -r c a
+
+	B)Move Directory b to c.
+
+>>mv -r b c
+
+	C)Create alias of ls -lh command to your name.
+
+>>alise sayali = 'ls -lh'
+
+	D)Change Directory name a to cdac.
+>> mv a cdac
+
+===================================================================
+
+Q3. A) 
+Create five files file1.txt , file2.txt ,file3.txt file4.txt and
+    file5.txt with some text inside it. Search for 's' character
+    inside all the files using grep command.
+    Also Use cat to view all file content together.
+
+>>cat > file1.txt
+    cat > file2.txt
+    cat > file3.txt
+    cat > file4.txt
+    cat > file5.txt
+
+    grep s file1.txt  file2.txt  file3.txt  file4.txt  file5.txt
+
+B)
+Create file.txt using cat and edit that using nano editor.
+>>cat file.txt
+    nano file.txt
+    edit
+    ctrl o
+    ctrl x
+	
+C)
+Create 5 empty files using touch command
+>>touch f1.txt f2.txt f3.txt f4.txt f5.txt
+	
+D)Remove previously created directory a , b and c.
+>>rmdir a b c
+
+===================================================================
+
+Q4. Create a file with some content using vi editor
+>> vi file6.txt
+
+A) Display the file using cat command
+>>cat file6.txt
+
+B) Display line numbers along with content
+>>cat -n file6.txt
+
+C) Display the file in reverse order using tac
+>> tac file6.txt
+
+D) Combine multiple files using cat command
+>> cat file1.txt file2.txt file3.txt > newfile
+
+===================================================================
+
+Q5. Create Random some files and sub directories.
+A) display files row wise, column wise, 1 per row
+>> ls
+>>ls -1
+
+B) sort the files in ascending, descending order
+
+>>sort f1.txt            
+> > sort -r f1.txt
+>>ls -1 (sort by name asc)
+>>ls -1 -r   (sort by name desc)
+     
+
+C) Create some hidden files and sub directories and display them using “ls -a”
+>>cat > .f1.txt
+>> mkdir .m1
+>>ls -a
+
+
+D) Change time stamp of some files and directories using touch command and display the files using ls -t ls -rt
+
+>>touch -t file2.txt
+
+E) Recursive display contents of your home directory.
+>>ls -r
+
+F) display all attributes of files and directories using ls -l
+>>ls -l
+
+G) display attributes of a directory using ls -ld
+>>ls -ld
+===================================================================
+Q1. Create directory of your name and then create 4 files inside it named
+a.txt, b.txt, c.txt and d.sh. And change the directory permission to
+only user and also files permission to only user such that
+A)user can read and write the file a.txt and b.txt
+>>chmod 600 a.txt b.txt
+
+B)user can write the file c.txt
+>> chmod 200 c.txt
+
+C)user can exectuable the file d.sh. Make Contents of file d.sh:
+			#/bin/sh
+			ls -lh
+>>chmod u+x d.sh
+>>vi d.sh
+>>bash vi.sh
+
+Q2. Change the permission of the previous directory to executable only.
+	Analyze the output.
+>>chmod a+x ../
+
+Q3. Change the permission of the previous directory to read only.
+	Analyze the output.
+>>chmod a+r ../
+
+Q4. Use echo to list the all files of your home directory.
+>>echo *
+
+Q5. Use echo to list the all files of /etc/ directory
+>>ls */*
+
+Q6. Use echo to list the all files of /etc/ directory with extension name .conf
+>>echo *.conf
+
+Q7. Use echo to append your name to a.txt
+>> echo "sayali" >> a.txt
+
+
+===================================================================
+
+Note:Many operation might not work.Analyze them
+1. Create Three level nested directory a,b and c
+>>mkdir -p a/b/c
+
+a)Create at least one hidden file in each directory
+>>touch .file1.txt ./b/.file2.txt ./b/c/file3.txt
+
+
+b)Create at least one normal text file in each directory
+>>touch file1.txt ./b/file2.txt ./b/c/file3.txt
+
+c)Copy c into a
+>>cp -r b/c ./
+
+d)Copy file inside a into b
+>> cp .1.txt b/
+
+
+2.	Change the third level directory c permission to read only
+	>>chmod a+r ./b/c
+
+3.	Try copying third level c directory to outside of a
+	>>cp b/c ../
+
+4.	Create the directory  “data“ inside b
+	>>mkdir b/data
+	
+5.	Change the permission of b to read and write only
+	>>chmod a+rw a/b
+
+6.	Create directory “data2”  inside b
+	>>mkdir b/data2
+
+7.	Create data.txt file inside b
+	>>cat > a/b/data.txt
+
+8.	Rename the second level directory c to copied_dir
+	>>mv a/b/c copied_dir
+
+9.	Change permission of copied_dir to only executable
+	>>chmod u+x b/copid_dir
+
+10.	Try ls on copied_dir
+	>>cannot work
+
+11.	Try moving copied_dir to outside of a
+	>>cannot work
+
+12.	Try moving data directory outside of a
+	>>cannot work, permission denied
+
+
+13.	Now change the owner of the directory a to root
+	>>
+
+14.	Change permission of a to read write and executable to only user
+	>>chmod u+rwx a
+
+15.	Try creating directory sample inside a
+	>>mkdir a/sample
+
+16.	Create directory x outside a
+	>>mkdir ../x
+
+17.	Try moving x inside a
+	>>mv x ./a
+
+18.	Create directory movies
+	>>mkdir movies
+
+19.	Change group of movies to sudo
+	>>sudo usermod -aG sudo newuser
+
+20.	Change group of movies to avahi
+21.	Try changing permission after changing ownership to root
+22.	Try Changing permission after changing group to sudo without sudo
+23.	Try Changing owner and group both to root
+24.	Try changinging permission
+25.	Try deleting the file
+	>>rm -rf a.txt
